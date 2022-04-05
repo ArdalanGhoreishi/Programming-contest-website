@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Result</title>
+</head>
+<body>
+
+<form class="contestSelection" action = "/showresult/select_contest" method = "POST" 
+         enctype = "multipart/form-data">
+	 <p><select class="contestForm" id="contestDropdownSelector" type="text" name="contestDropdown" placeholder="Select A contest">
+         <option disabled selected>Select a contest</option>
+	 {% for contest in contests %}
+         <option id="{{contest}}" value={{contest}} SELECTED>{{contest}}</option>
+	 {% endfor %}
+   	 </select>		Select the Contest </p>
+	 <input class="btn" type="submit" value="submit"/>
+	 
+      </form>  
+	{% block content %}
+ 	<p>contests</p>
+	{{data | safe}}
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contestant</title>
+</head>
+<body>
+
+<form class="contestSelection" action = "/contestant/upload_file" method = "POST" 
+         enctype = "multipart/form-data">
+	 <p><select class="contestForm" id="contestDropdownSelector" type="text" name="contestDropdown" placeholder="Select A contest">
+         <option disabled selected>Select a contest</option>
+	 {% for contest in contests %}
+         <option id="{{contest}}" value={{contest}} SELECTED>{{contest}}</option>
+	 {% endfor %}
+   	 </select>		Select the contest </p>
+	 <p><input type = "text" name = "sender" /> Enter your Name</p>
+         <p><input type = "file" name = "file" /> Upload your code</p>
+	 <input class="btn" type="submit" value="submit"/>
+	 
+      </form>  
+	{% block content %}
+ <p>contests in progress</p>
+{{data | safe}}
+{% endblock %}
+</body>
+</html>

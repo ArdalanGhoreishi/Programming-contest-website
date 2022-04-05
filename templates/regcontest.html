@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register a contest</title>
+</head>
+<body>
+<p><strong>please upload your contest form as a txt file</strong></p>
+<form action = "http://localhost:5000/regcontestdone" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form> 
+<p>You can see a sample form in the figure below </p>
+<img src="{{ user_image }}" alt="User Image">
+</body>
+</html>

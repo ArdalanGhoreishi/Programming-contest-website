@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Programming contest website</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('contestant') }}">contests</a></li>
+            <li><a href="{{ url_for('showresult') }}">show contests results</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+<form class="form-inline" method="POST" action="{{ url_for('test') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Are you a contestant or an admin?</span>
+            <select name="comp_select" class="selectpicker form-control">
+              {% for o in data %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+    </div>
+    <button type="submit" class="btn btn-default">Go</button>
+  </div>
+</form>
+</body>
+</html>
